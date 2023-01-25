@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h2 class="my-3">Dettagli progetto</h2>
+    <h2 class="text-decoration-underline my-3">Dettagli progetto</h2>
     <div class="card">
         <div class="card-body">
             <h4 class="card-title fw-bold">{{ $project->title}}</h4>

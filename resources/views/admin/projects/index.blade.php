@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h1 class="text-center">Lista progetti</h1>
+    <h2 class="text-decoration-underline my-3">Lista progetti</h2>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -18,7 +18,7 @@
                 <td>{{ $project->title }}</td>
                 <td>{{ $project->slug }}</td>
                 <td>
-                    <a href="{{ route('admin.projects.show', $project->id) }}" class="btn btn-info">Dettagli</a>
+                    <a href="{{ route('admin.projects.show', $project->id) }}" class="btn btn-light"><i class="fa-solid fa-eye"></i></a>
                 </td>
             </tr>
             @endforeach
