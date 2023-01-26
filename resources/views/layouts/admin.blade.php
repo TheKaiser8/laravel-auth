@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
-    <title>{{ config('app.name', 'Laravel Boolfolio') }}</title>
+    <title>Laravel Boolfolio | @yield('page-title')</title>
 
     <!-- Fontawesome 6 cdn -->
     <link

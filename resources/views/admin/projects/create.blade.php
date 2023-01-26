@@ -1,5 +1,9 @@
 @extends('layouts.admin')
 
+@section('page-title')
+    Crea
+@endsection
+
 @section('content')
     <h2 class="text-decoration-underline my-3">Crea progetto</h2>
     <form action="{{ route('admin.projects.store') }}" method="POST">
@@ -7,10 +11,6 @@
         <div class="mb-3">
             <label for="title" class="form-label">Titolo*</label>
             <input type="text" class="form-control" id="title" name="title" maxlength="150" value="{{ old('title') }}" required>
-        </div>
-        <div class="mb-3">
-            <label for="slug" class="form-label">Slug*</label>
-            <input type="text" class="form-control" id="slug" name="slug" value="{{ old('slug') }}" required>
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Descrizione</label>

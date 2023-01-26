@@ -1,5 +1,9 @@
 @extends('layouts.admin')
 
+@section('page-title')
+    Dettagli
+@endsection
+
 @section('content')
     <h2 class="text-decoration-underline my-3">Dettagli progetto</h2>
     <div class="card">
