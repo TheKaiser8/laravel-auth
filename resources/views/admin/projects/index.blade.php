@@ -6,6 +6,9 @@
 
 @section('content')
     <h2 class="text-decoration-underline my-3">Lista progetti</h2>
+    @if(session('message'))
+        <div class="alert alert-success">{{ session('message') }}</div>
+    @endif
     <a href="{{ route('admin.projects.create') }}" class="btn btn-light my-3"><i class="fa-regular fa-square-plus me-2"></i>Aggiungi progetto</a>
     <table class="table table-striped">
         <thead>

@@ -10,7 +10,10 @@
         @csrf
         <div class="mb-3">
             <label for="title" class="form-label">Titolo*</label>
-            <input type="text" class="form-control" id="title" name="title" maxlength="150" value="{{ old('title') }}" required>
+            <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" maxlength="150" value="{{ old('title') }}">
+            @error('title')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Descrizione</label>
@@ -18,7 +21,10 @@
         </div>
         <div class="mb-3">
             <label for="customer" class="form-label">Cliente*</label>
-            <input type="text" class="form-control" id="customer" name="customer" maxlength="100" value="{{ old('customer') }}" required>
+            <input type="text" class="form-control @error('customer') is-invalid @enderror" id="customer" name="customer" maxlength="100" value="{{ old('customer') }}">
+            @error('customer')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
         </div>
         <button type="submit" class="btn btn-primary">Crea</button>
         <button type="reset" class="btn btn-secondary">Pulisci i campi</button>
