@@ -28,6 +28,12 @@
                 <td>
                     <a href="{{ route('admin.projects.show', $project) }}" class="btn btn-light"><i class="fa-solid fa-eye"></i></a>
                     <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-light"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <form action="{{ route('admin.projects.destroy', $project)}}" method="POST" class="d-inline-block">
+                    @csrf
+                    @method('DELETE')
+
+                    <button type="submit" class="btn btn-light"><i class="fa-solid fa-trash"></i></button>
+                    </form>
                 </td>
             </tr>
             @endforeach
