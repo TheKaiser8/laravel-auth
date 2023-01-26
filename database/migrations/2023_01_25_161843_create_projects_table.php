@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title', 150)->unique();
             $table->text('description')->nullable();
             $table->string('slug');
-            $table->string('customer');
+            $table->string('customer', 100);
             $table->timestamps();
         });
     }
