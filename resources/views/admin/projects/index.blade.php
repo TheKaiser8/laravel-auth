@@ -27,6 +27,7 @@
                 <td>{{ $project->slug }}</td>
                 <td>
                     <a href="{{ route('admin.projects.show', $project) }}" class="btn btn-light"><i class="fa-solid fa-eye"></i></a>
+                    <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-light"><i class="fa-solid fa-pen-to-square"></i></a>
                 </td>
             </tr>
             @endforeach
