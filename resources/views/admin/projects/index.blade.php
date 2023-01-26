@@ -17,7 +17,8 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($projects as $project)
+            {{ dd($projects); }}
+            {{-- @foreach ($projects as $project)
             <tr>
                 <td>{{ $project->id }}</td>
                 <td>{{ $project->title }}</td>
@@ -26,7 +27,7 @@
                     <a href="{{ route('admin.projects.show', $project) }}" class="btn btn-light"><i class="fa-solid fa-eye"></i></a>
                 </td>
             </tr>
-            @endforeach
+            @endforeach --}}
         </tbody>
       </table>
 @endsection
