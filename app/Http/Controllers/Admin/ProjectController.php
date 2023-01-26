@@ -47,7 +47,7 @@ class ProjectController extends Controller
         $new_project->slug = Str::slug($new_project->title, '-');
         $new_project->save();
 
-        return view('admin.projects.index');
+        return redirect()->route('admin.projects.index');
     }
 
     /**
