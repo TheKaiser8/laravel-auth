@@ -43,12 +43,13 @@ class ProjectController extends Controller
     {
         $data = $request->validated();
 
-        $img_path = Storage::disk('public')->put('uploads', $data['picture']);
-
         $new_project = new Project();
         $new_project->fill($data);
         $new_project->slug = Str::slug($new_project->title, '-');
-        $new_project->picture = $img_path;
+        // controllo che crea la proprietà picture solo se è settata
+        if (isset($data['picture'])) {
+            $new_project->picture = Storage::disk('public')->put('uploads', $data['picture']);
+        }
         $new_project->save();
 
         return redirect()->route('admin.projects.index')->with('message', "Il progetto $new_project->title è stato creato con successo");
