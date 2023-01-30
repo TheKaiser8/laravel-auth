@@ -6,7 +6,7 @@
 
 @section('content')
     <h2 class="text-decoration-underline my-3">Modifica: {{ $project->title }}</h2>
-    <form action="{{ route('admin.projects.update', $project) }}" method="POST">
+    <form action="{{ route('admin.projects.update', $project) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -25,6 +25,13 @@
             <label for="customer" class="form-label">Cliente*</label>
             <input type="text" class="form-control @error('customer') is-invalid @enderror" id="customer" name="customer" maxlength="100" value="{{ old('customer', $project->customer) }}">
             @error('customer')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+        </div>
+        <div class="mb-3">
+            <label for="picture" class="form-label">Immagine</label>
+            <input type="file" class="form-control @error('picture') is-invalid @enderror" id="picture" name="picture" value="{{ old('picture') }}">
+            @error('picture')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>

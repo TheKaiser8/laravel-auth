@@ -31,7 +31,7 @@
         </div>
         <div class="mb-3">
             <label for="picture" class="form-label">Immagine</label>
-            <input type="file" class="form-control @error('picture') is-invalid @enderror" id="picture" name="picture" maxlength="1000" value="{{ old('picture') }}">
+            <input type="file" class="form-control @error('picture') is-invalid @enderror" id="picture" name="picture" value="{{ old('picture') }}">
             @error('picture')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror

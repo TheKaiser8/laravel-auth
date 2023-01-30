@@ -91,6 +91,15 @@ class ProjectController extends Controller
         $old_title = $project->title;
 
         $project->slug = Str::slug($data['title'], '-');
+
+        // controllo che verifica se è presente l'immagine e la cancella di default se già inserita
+        if (isset($data['picture'])) {
+            if ($project->picture) {
+                Storage::disk('public')->delete($project->picture);
+            }
+            $data['picture'] = Storage::disk('public')->put('uploads', $data['picture']);
+        }
+
         $project->update($data);
 
         return redirect()->route('admin.projects.index')->with('message', "Il progetto $old_title è stato aggiornato!");
@@ -105,6 +114,10 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         $old_title = $project->title;
+
+        if ($project->picture) {
+            Storage::disk('public')->delete($project->picture);
+        }
 
         $project->delete();
 
